@@ -10,8 +10,21 @@
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
-*/
+*/ 
+// Consegui resolver apos leitura do conteúdo do site : https://qastack.com.br/programming/10359907/how-to-compute-the-sum-and-average-of-elements-in-an-array */ 
 
-const average = () => {};
+const average = (number) => {
+  if (number === null || number.length === 0) {
+    return undefined;
+  } 
+  let sum = 0;
+  for (let index = 0; index < number.length; index += 1) {
+    if (typeof number[index] !== 'number') {
+      return undefined;
+    }
+    sum += number[index];
+  }
+  return Math.round(sum / number.length);
+};
 
 module.exports = average;
